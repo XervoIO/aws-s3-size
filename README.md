@@ -1,6 +1,10 @@
 # AWS S3 Folder Size Calculator
 This module does one thing. It will calculate the total size of a folder inside of S3.
 
+Installation
+
+    npm install aws-s3-size
+
 Example Usage
 
     var S3Sizer = require('../index');
