@@ -7,7 +7,7 @@ Installation
 
 Example Usage
 
-    var S3Sizer = require('../index');
+    var S3Sizer = require('aws-s3-size');
     configFile = __dirname + '/awscreds.json',
     s3Sizer = new S3Sizer({configFile : configFile});
 
