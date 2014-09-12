@@ -1,5 +1,5 @@
 var S3Sizer = require('../index');
-    configFile = __dirname + '/awscreds.json',
+    configFile = __dirname + '/testcreds.json',
     s3Sizer = new S3Sizer({configFile : configFile}),
     expect = require('expect.js'),
     fs = require('fs'),
@@ -11,15 +11,7 @@ describe('S3 Sizer Module', function() {
       // get test storage size
       s3Sizer.getFolderSize(config.bucket, config.folder, function(err, size) {
         expect(err).to.not.be.ok();
-        expect(size).to.be(1354482);
-        done();
-      });
-    });
-    it('should return the 0 is there are no items in folder', function(done) {
-      // get test storage size
-      s3Sizer.getFolderSize(config.bucket, config.zeroFolder, function(err, size) {
-        expect(err).to.not.be.ok();
-        expect(size).to.be(0);
+        expect(size).to.be.greaterThan(0);
         done();
       });
     });
