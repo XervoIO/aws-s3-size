@@ -1,6 +1,6 @@
 {
   "name": "aws-s3-size",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple module to calculate folder size in S3.",
   "main": "index.js",
   "author": "Modulus <feedback@modulus.io>",

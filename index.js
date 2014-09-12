@@ -58,7 +58,7 @@ S3Sizer.prototype._getFolderSize = function(bucket, folder, marker, callback) {
     params.Marker = marker;
   }
 
-  this.s3.client.listObjects(params, function(err, data) {
+  (this.s3.client || this.s3).listObjects(params, function(err, data) {
     if(err) {
       return callback(err, null);
     }
