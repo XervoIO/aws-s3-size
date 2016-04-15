@@ -14,3 +14,7 @@ Example Usage
     s3Sizer.getFolderSize('bucket.name', 'foldername', function(err, size) {
       console.log(size)
     });
+If you already have s3 instance, you can pass it in parameter:
+
+        var s3 = new AWS.S3();
+        s3Sizer = new S3Sizer({"s3": s3});
