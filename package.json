@@ -1,6 +1,6 @@
 {
   "name": "aws-s3-size",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Simple module to calculate folder size in S3.",
   "main": "index.js",
   "author": "Modulus <feedback@modulus.io>",
@@ -9,17 +9,16 @@
     "Brandon Cannaday <brandon@modulus.io>"
 
   ],
-  "repository": "",
   "dependencies": {
-    "aws-sdk" : "2.0.16"
+    "aws-sdk" : "2.1179.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/onmodulus/aws-s3-size"
   },
   "devDependencies" : {
-    "mocha" : "1.7.x",
-    "expect.js" : "0.2.x"
+    "mocha" : "10.0.x",
+    "expect.js" : "0.3.x"
   },
   "keywords": [
     "aws",
