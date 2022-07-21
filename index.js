@@ -9,21 +9,25 @@ var AWS = require('aws-sdk');
  * accessKeyId is included then secretAccessKey must also be included.
  * @config {string} [params.region] The AWS region to make calls against.
  */
-var S3Sizer = function(params) {
-  if(params.hasOwnProperty('configFile')) {
-    AWS.config.loadFromPath(params.configFile);
-  }
+ var S3Sizer = function(params) {
+   if(params.hasOwnProperty('s3')) {
+     this.s3 = params.s3;
+   } else{
+     if(params.hasOwnProperty('configFile')) {
+       AWS.config.loadFromPath(params.configFile);
+     }
 
-  if(params.hasOwnProperty('accessKeyId') && params.hasOwnProperty('secretAccessKey')) {
-    AWS.config.update({accessKeyId : params.accessKeyId, secretAccessKey : params.secretAccessKey});
-  }
+     if(params.hasOwnProperty('accessKeyId') && params.hasOwnProperty('secretAccessKey')) {
+       AWS.config.update({accessKeyId : params.accessKeyId, secretAccessKey : params.secretAccessKey});
+     }
 
-  if(params.hasOwnProperty('region')) {
-    AWS.config.update({region : params.region});
-  }
+     if(params.hasOwnProperty('region')) {
+       AWS.config.update({region : params.region});
+     }
 
-  this.s3 = new AWS.S3();
-};
+     this.s3 = new AWS.S3();
+   }
+ };
 
 /**
  * Gets the combined file size of all the objects in a S3 folder.
